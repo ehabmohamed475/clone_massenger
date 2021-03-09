@@ -8,7 +8,6 @@ import 'package:massenger/widgets/prepare_friends.dart';
 import 'package:massenger/widgets/prepare_users_search_and_friends.dart';
 import 'package:massenger/widgets/recent_chats.dart';
 import 'package:massenger/widgets/search_to_add_to_massenger.dart';
-import 'package:massenger/widgets/list_users_search_and_friends.dart';
 
 class HomeScreen extends StatefulWidget {
   var MyEmail,user_image,MyUserName;
@@ -50,7 +49,6 @@ void refresh(){
 
 
   void offline(bool active)async{
-  //print(widget.MyEmail);
     await Firestore.instance.collection('users').document( widget.MyEmail).updateData({
       "active":active,
     });
@@ -75,7 +73,6 @@ WidgetsBinding.instance.addObserver(this);
 
    await Firestore.instance.collection('chat').where("chat_emails",arrayContains: widget.MyEmail).get().then((value) {
      var doc_recentchat=value.documents;
-     //print(doc_recentchat);
      doc_recentchat.forEach((value)async {
       await Firestore.instance.collection("chat").document(value.documentID).collection('msg').orderBy('creeate_at',descending:true ).limit(1).get().then((value2) {
         if(value2.documents[0]["send by"]!=widget.MyEmail && value2.documents[0]["seen"]==false){
@@ -205,7 +202,6 @@ WidgetsBinding.instance.addObserver(this);
               child: Column(children: [
                 SizedBox(height: 15,),
                 search_to_add_to_massenger(change_key_search),
-                //SizedBox(height: 15,),
 
                 prepare_users_search_and_friends(key_search,widget.MyEmail),
 
@@ -222,24 +218,3 @@ WidgetsBinding.instance.addObserver(this);
     );
   }
 }
-/*
- Expanded(
-            child: Container(
-              decoration: BoxDecoration(
-                color: Theme.of(context).accentColor,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(30.0),
-                  topRight: Radius.circular(30.0),
-                  bottomLeft: Radius.circular(30.0),
-                  bottomRight: Radius.circular(30.0),
-                ),
-              ),
-              child: Column(
-                children: <Widget>[
-                  FavoriteContacts(),
-                  RecentChats(),
-                ],
-              ),
-            ),
-          ),
- */

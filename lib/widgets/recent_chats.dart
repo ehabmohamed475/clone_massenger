@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:massenger/models/message_model.dart';
 import 'package:massenger/screens/chat_screen.dart';
 
 class RecentChats extends StatefulWidget  {
@@ -18,7 +17,6 @@ class _RecentChatsState extends State<RecentChats> {
 
   String trimText(length,String text){
     if(length >7 ){
-      // var x=length-8;
       String trimetext= text.substring(0,7);
       var trimetextsplite=trimetext.split(" ");
       return trimetextsplite[0];
@@ -93,10 +91,7 @@ class _RecentChatsState extends State<RecentChats> {
 
     }else {
     var last_message=last_message_snapshot.data.documents;
-//print(last_message[3]["msg"]);
 
-//"send by"
-//print(last_message[index]["seen"].toString());
                       return StreamBuilder(
                         stream: Firestore.instance.collection("users").document(user_email).snapshots(),
                         builder: (context, userssnapshot) {

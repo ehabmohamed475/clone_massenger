@@ -44,17 +44,6 @@ class _AppDrawerState extends State<AppDrawer> {
             ),
             SizedBox(height: 5,),
 
-           /*
-
-            CircleAvatar(radius: 30, backgroundImage:widget.imge_user != null? Image.network(widget.imge_user): AssetImage("img/angry.png"),),
-            SizedBox(height: 5,),
-            Text(widget.username !=null? widget.username :"Ehab ", style: TextStyle(
-              fontWeight: FontWeight.bold,),),
-            SizedBox(height: 5,),
-
-
-            Divider(),
-            */
 
             ListTile(
               leading: Icon(Icons.home,size: 30,),
@@ -103,25 +92,6 @@ class _AppDrawerState extends State<AppDrawer> {
               },
             ),
 
-//            Divider(),
-
-/*
-            ListTile(
-              leading: Icon(Icons.info_outline),
-              title: Text('Share Information With Us'),
-              onTap: () {
-                Navigator.of(context).pushReplacementNamed('/');
-              },
-            ),
-
-            Divider(),
-
-
-
- */
-
-
-  //          Divider(),
 
 
 
@@ -157,108 +127,3 @@ class _AppDrawerState extends State<AppDrawer> {
     });
   }
 }
-
-/*
-Drawer(
-                      elevation: 0.0,
-
-                      child: SingleChildScrollView(
-                        child: Column(
-                          children: <Widget>[
-                            AppBar(
-                              title: Text('Hello My Friend!',),
-                              backgroundColor: Colors.white,
-
-                            ),
-                            SizedBox(height: 5,),
-
-                            CircleAvatar(radius: 30, backgroundImage:usersnapshot.data["img_user"] !=null ?Image.network(usersnapshot.data["img_user"])  :AssetImage(
-                                "img/angry.png"),),
-                            SizedBox(height: 5,),
-                            Text("Ehab", style: TextStyle(
-                              fontWeight: FontWeight.bold,),),
-                            SizedBox(height: 5,),
-
-
-                            Divider(),
-
-                            ListTile(
-                              leading: Icon(Icons.home),
-                              title: Text('Home'),
-                              onTap: () {
-                                change_mode_from_drawer(NavBar.home);
-                                Navigator.of(context).pop();
-                              },
-                            ),
-
-                            Divider(),
-
-
-                            ListTile(
-                              leading: Icon(Icons.trending_up),
-                              title: Text('Trend News'),
-                              onTap: () {
-                                change_mode_from_drawer(NavBar.trend);
-                                Navigator.of(context).pop();
-                              },
-                            ),
-
-                            Divider(),
-
-
-                            ListTile(
-                              leading: Icon(Icons.watch_later),
-                              title: Text('Watch Later List'),
-                              onTap: () {
-                                change_mode_from_drawer(NavBar.watchLater);
-                                Navigator.of(context).pop();
-                              },
-                            ),
-
-                            Divider(),
-
-
-                            ListTile(
-                              leading: Icon(Icons.info_outline),
-                              title: Text('Share Information With Us'),
-                              onTap: () {
-                                Navigator.of(context).pushReplacementNamed('/');
-                              },
-                            ),
-
-                            Divider(),
-
-
-                            ListTile(
-                              leading: Icon(Icons.inbox_rounded),
-                              title: Text('Inbox'),
-                              onTap: () {
-                                Navigator.of(context).pushReplacementNamed('/');
-                              },
-                            ),
-
-                            Divider(),
-
-
-                            ListTile(
-                              leading: Icon(Icons.person),
-                              title: Text('Complians'),
-                              onTap: () {
-                                Navigator.of(context).pushReplacementNamed('/');
-                              },
-                            ),
-                            Divider(),
-                            ListTile(
-                              leading: Icon(Icons.logout),
-                              title: Text('Log Out'),
-                              onTap: () {
-                                FirebaseAuth.instance.signOut();
-                              },
-                            ),
-
-
-                          ],
-                        ),
-                      ),
-                    );
- */

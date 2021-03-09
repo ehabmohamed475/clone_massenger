@@ -16,9 +16,6 @@ Function setEmjiVisible;
 class _input_chatState extends State<input_chat> {
   var InputChat_controller=TextEditingController();
  bool check_controller=false,typing=false;
-//var doc_chat;
-  //bool isEmojiVisible = false;
-  //bool isKeyboardVisible = false;
 FocusNode focusNode =FocusNode();
 
 
@@ -30,13 +27,6 @@ FocusNode focusNode =FocusNode();
     focusNode.addListener(() {
       if(focusNode.hasFocus){
         widget.setEmjiVisible(false);
-        /*
-        setState(() {
-          widget.isEmojiVisible=false;
-        });
-
-
-         */
 
       }
     });
@@ -54,10 +44,8 @@ FocusNode focusNode =FocusNode();
   await Firestore.instance.collection('chat').where("chat_emails",arrayContains:widget.my_email ).getDocuments().then((value) {
      var docs=value.documents;
      for(int i=0;i<docs.length;i++){
-      // print(widget.user_email);
 
 if(docs[i]["chat_emails"].contains(widget.user_email)){
-  //print(docs[i].documentID);
    Firestore.instance.collection("chat").document(docs[i].documentID).updateData({
          my_email:typing,
        } );
@@ -69,37 +57,10 @@ if(docs[i]["chat_emails"].contains(widget.user_email)){
 
   });
 
-/*
-  docs.forEach((value2) async{
-       if (value2["chat_emails"].contains(widget.user_email)) {
-         print("enter");
-
-
-        await Firestore.instance.collection("chat").document(value2.documentID).updateData({
-           my_email: typing,
-         });
-
-
-
-       }
-       //print(doc_chat);
-     });
- */
 
 
  }
 
-/*
-bool check_controller(bool state){
-  setState(() {
-    return state;
-  });
-
-}
-
-
-
- */
 
 Widget emojiselect(){
   return EmojiPicker( rows: 3, columns: 7,
@@ -180,12 +141,7 @@ Widget emojiselect(){
                             focusNode.unfocus();
                             focusNode.canRequestFocus=false;
                             widget.setEmjiVisible(!widget.isEmojiVisible);
-/*
-                            setState(() {
-                              isEmojiVisible=!isEmojiVisible;
-                            });
 
- */
                           },
                         ),
                         IconButton(
@@ -198,10 +154,8 @@ var doc_chat;
                             await Firestore.instance.collection('chat').where("chat_emails",arrayContains:widget.my_email ).getDocuments().then((value) {
                               var docs=value.documents;
                               for(int i=0;i<docs.length;i++){
-                                // print(widget.user_email);
 
                                 if(docs[i]["chat_emails"].contains(widget.user_email)){
-                                  //print(docs[i].documentID);
                                   doc_chat=docs[i].documentID;
                                 }
                               }

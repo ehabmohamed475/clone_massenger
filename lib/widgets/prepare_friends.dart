@@ -24,7 +24,6 @@ class prepare_friends extends StatelessWidget {
 
       }else {
         var friends_data=friends_snapshot.data.documents;
-        //print(friends_data[0]['email']+friends_data[0]['user_image']+friends_data[0]['user_name']);
 
         if(friends_data.length==0 ){
                   return Expanded(
@@ -53,8 +52,6 @@ class prepare_friends extends StatelessWidget {
                     child: ListView.builder(
                       itemCount: friends_data.length,
                       itemBuilder: (BuildContext context, int index) {
-
-//print(user_data['friends'].contains(people[index]['email']));
                         return list_users_search_and_friends(
                             true,
                             friends_data[index]['active'],

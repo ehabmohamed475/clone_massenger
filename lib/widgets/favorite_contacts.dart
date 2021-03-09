@@ -15,7 +15,6 @@ Function refresh;
 class _FavoriteContactsState extends State<FavoriteContacts> {
   String trimText(length,String text){
     if(length >7 ){
-     // var x=length-8;
     String trimetext= text.substring(0,7);
    var trimetextsplite=trimetext.split(" ");
       return trimetextsplite[0];
@@ -33,7 +32,6 @@ class _FavoriteContactsState extends State<FavoriteContacts> {
 
     }else {
       var friends_data=friends_snapshot.data.documents;
-      //print(friends_data[0]['email']+friends_data[0]['user_image']+friends_data[0]['user_name']);
 
       if(friends_data.length==0 ){
         return Container();
@@ -56,15 +54,6 @@ class _FavoriteContactsState extends State<FavoriteContacts> {
                   children: <Widget>[//more_horiz supervised_user_circle
                     Text('Favorite Contacts',
                       style: TextStyle(color: Colors.blueGrey, fontSize: 18.0, fontWeight: FontWeight.bold, letterSpacing: 1.0,),),
-/*
-                    Container(width: 25,height: 25,
-                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(40), color: Colors.red,
-                        border: Border.all(color: Colors.white,
-                          width: 1,
-                        ),),
-                      child: Center(child: FittedBox(child: Text("4",style: TextStyle(fontSize: 10,color: Colors.white,fontWeight: FontWeight.bold),))),)
-
-*/
 
                     IconButton(icon: Icon(Icons.zoom_in,), iconSize: 25.0, color: Colors.blueGrey,
                       onPressed: () {},

@@ -4,7 +4,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:massenger/login_and_signup/Login/login_screen.dart';
 import 'package:massenger/login_and_signup/components/already_have_an_account_acheck.dart';
@@ -83,7 +82,6 @@ String validate_text="";
 
       } else {
         createemail();
-        //Navigator.of(context).pushNamed("/post_screen");
       }
     }
   }
@@ -113,20 +111,7 @@ String validate_text="";
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    /*
-                Container(//margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
-                  child: Text(
-                    "SIGNUP",
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                ),
 
-                SvgPicture.asset(
-                  "assets/icons/signup.svg",
-                  height: size.height * 0.35,
-                ),
-
- */
                     SizedBox(height: size.height * 0.03),
 
                     Stack(children: [
@@ -339,27 +324,7 @@ String validate_text="";
                         );
                       },
                     ),
-                    /*
-              OrDivider(),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  SocalIcon(
-                    iconSrc: "assets/icons/facebook.svg",
-                    press: () {},
-                  ),
-                  SocalIcon(
-                    iconSrc: "assets/icons/twitter.svg",
-                    press: () {},
-                  ),
-                  SocalIcon(
-                    iconSrc: "assets/icons/google-plus.svg",
-                    press: () {},
-                  ),
-                ],
-              )
 
-               */
                   ],
                 ),
               ),

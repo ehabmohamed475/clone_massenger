@@ -6,7 +6,6 @@ class list_users_search_and_friends extends StatelessWidget {
   bool friend_or_not,active;
   var user_image,user_name,email,my_email;
   list_users_search_and_friends(this.friend_or_not,this.active,this.user_image,this.user_name,this.email,this.my_email);
- // search_in_myfriend=false
   @override
   Widget build(BuildContext context) {
 
@@ -85,8 +84,6 @@ class list_users_search_and_friends extends StatelessWidget {
                             alignment: Alignment.center,
                             child: FlatButton(onPressed: ()async{
                               if(friend_or_not==false){
-                                //var name_document;
-                                //if(my_email.length > ){}
                                 var unique=DateTime.now().toString();
                                 await FirebaseFirestore.instance.collection('chat').document(unique).collection("msg").document().setData({
                                   'send by':my_email,
@@ -101,7 +98,6 @@ class list_users_search_and_friends extends StatelessWidget {
 
                                 await FirebaseFirestore.instance.collection('chat').document(unique).setData({
                                   'chat_emails':[my_email,email],
-                                  //'email_2':email,
                                   'creeate_at':DateTime.now(),
                                   my_email_sup:false,
                                   email_sup:false,

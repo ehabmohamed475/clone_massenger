@@ -45,7 +45,6 @@ class _LoginScreenState extends State<LoginScreen> {
     } else {
       _formKey.currentState.save();
         login();
-        //Navigator.of(context).pushNamed("/post_screen");
     }
   }
 

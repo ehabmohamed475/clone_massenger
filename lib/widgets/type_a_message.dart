@@ -17,20 +17,16 @@ class type_a_message extends StatelessWidget {
         return  Container();
 
       }
-      //.documents[0].documentID;
 
       doc_chat_snapshot.data.documents.forEach((value) {
         if (value["chat_emails"].contains(user_email)) {
          doc_chat=value.documentID;
          var user_email_sup=user_email.replaceAll('.com', '');
          typing=value[user_email_sup];
-         //print(doc_chat);
         }
-        //print(doc_chat);
       });
 
             return typing == true ?Container(
-              //width: MediaQuery.of(context).size.width * 0.41,
               child: Text("type a message...",
                 style: TextStyle(
                   color: Colors.white,

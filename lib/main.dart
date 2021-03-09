@@ -2,7 +2,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:massenger/login_and_signup/Login/login_screen.dart';
-import 'package:massenger/screens/home_screen.dart';
 import 'package:massenger/screens/splash_screen.dart';
 import 'package:massenger/screens/splash_screen2.dart';
 

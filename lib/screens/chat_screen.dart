@@ -54,10 +54,8 @@ class _ChatScreenState extends State<ChatScreen> with WidgetsBindingObserver{
     await Firestore.instance.collection('chat').where("chat_emails",arrayContains:widget.my_email ).getDocuments().then((value) {
       var docs=value.documents;
       for(int i=0;i<docs.length;i++){
-        // print(widget.user_email);
 
         if(docs[i]["chat_emails"].contains(widget.user_email)){
-          //print(docs[i].documentID);
           Firestore.instance.collection("chat").document(docs[i].documentID).updateData({
             my_email:false,
           } );
@@ -163,26 +161,7 @@ Widget add_seen(doc_chat,doc_id){
   }
 
 
-  /*
-@override
-  void initState() {
-  fetch_doc_id_chat();
-  super.initState();
-  }
-  String documentID;
-  void fetch_doc_id_chat()async{
-    var documentID;
-    var doc_ref =await Firestore.instance.collection('chat').where("chat_emails",arrayContains: widget.my_email).getDocuments();
-   await doc_ref.documents.forEach((result) {
-      setState(() {
-        documentID=result.documentID;
 
-      });
-    });
-   // print(documentID);
-  }
-
-   */
   @override
   Widget build(BuildContext context) {
 return Scaffold(
@@ -199,7 +178,7 @@ return Scaffold(
                   Stack(children: [
                     CircleAvatar(radius: 25.0,
                       backgroundImage: NetworkImage(
-                          user_data["user_image"]), //AssetImage("assets/images/steven.jpg"),
+                          user_data["user_image"]),
                     ),
 
                     if(user_data["active"] == true) Positioned(
@@ -289,7 +268,6 @@ return Scaffold(
                             return Center(child: Container());
 
                           }
-                      //.documents[0].documentID;
 
                       doc_chat_snapshot.data.documents.forEach((value) {
                         if (value["chat_emails"].contains(widget.user_email)) {

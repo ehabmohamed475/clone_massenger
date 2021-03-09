@@ -6,7 +6,6 @@ class prepare_users_search_and_friends extends StatelessWidget {
   String key_search,MyEmail;
 
 
-  //bool email=false;
   prepare_users_search_and_friends(this.key_search,this.MyEmail);
   @override
   Widget build(BuildContext context) {
@@ -37,7 +36,6 @@ class prepare_users_search_and_friends extends StatelessWidget {
 
     }else {
     var user_data=usersnapshot.data;
-    //var query=
     return StreamBuilder(stream:key_search.contains("@")? Firestore.instance.collection('users').where("email",isEqualTo: key_search ).snapshots()
         :Firestore.instance.collection('users').where("user_name",isEqualTo: key_search).snapshots(),
         builder: (context, search_snapshot) {
@@ -77,7 +75,6 @@ class prepare_users_search_and_friends extends StatelessWidget {
 if(people[0]['email']== MyEmail){
   return Container();
 }
-//print(people[index]['email']);
                   bool friend_or_not= user_data['friends'].isEmpty?false:user_data['friends'].contains(people[index]['email']); //.contains(people[index]['email']);
                     return list_users_search_and_friends(
                         friend_or_not,
@@ -107,6 +104,3 @@ if(people[0]['email']== MyEmail){
     );
   }
 }
-/*
-
- */

@@ -36,7 +36,6 @@ class _SplashScreen2State extends State<SplashScreen2> {
          });
 
       }
-        // print(user["user_image"]);
 
 
     });
