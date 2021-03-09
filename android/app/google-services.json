@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "512068021661",
+    "project_id": "massenger-d344a",
+    "storage_bucket": "massenger-d344a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:512068021661:android:f566a57b28387416a4d374",
+        "android_client_info": {
+          "package_name": "com.boyka.massenger"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "512068021661-kvj2er1kvlr5qpnblo8sfjmcp7kjvakt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCw1hA523SQq2mK-lx1w_khQvF7Y4AY4QM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "512068021661-kvj2er1kvlr5qpnblo8sfjmcp7kjvakt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
